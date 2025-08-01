@@ -1,0 +1,35 @@
+function doPost(e) {
+  var sheet = SpreadsheetApp.openById("1hbpukAZfOqf5P_Ihg9MQ3ny5m9nTTeubDn3IjqwdQvo");
+  var data = JSON.parse(e.postData.contents);
+  
+  if (data.type === "language_request") {
+    // Get or create "Language Requests" sheet
+    var languageSheet;
+    try {
+      languageSheet = sheet.getSheetByName("Language Requests");
+    } catch (e) {
+      languageSheet = sheet.insertSheet("Language Requests");
+      // Add header
+      languageSheet.appendRow(["Language"]);
+    }
+    
+    // Add language request
+    languageSheet.appendRow([data.language]);
+  } else {
+    // Regular waitlist submission
+    var waitlistSheet = sheet.getActiveSheet();
+    waitlistSheet.appendRow([data.name, data.email, new Date()]);
+  }
+  
+  return ContentService.createTextOutput("Success");
+}
+
+function doGet(e) {
+  if (e.parameter.action === "count") {
+    var sheet = SpreadsheetApp.openById("1hbpukAZfOqf5P_Ihg9MQ3ny5m9nTTeubDn3IjqwdQvo").getActiveSheet();
+    var count = sheet.getLastRow() - 1; // Subtract 1 for header row
+    return ContentService.createTextOutput(JSON.stringify({count: count}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  return ContentService.createTextOutput("API is working");
+}
