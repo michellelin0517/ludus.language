@@ -177,7 +177,7 @@ input:focus {
     font-size: 0.95rem;
 }
 
-.language-request {
+.language-selection {
     background: #ffffff;
     padding: 2rem;
     border-radius: 15px;
@@ -185,7 +185,7 @@ input:focus {
     border: 1px solid #e5e7eb;
 }
 
-.language-request h3 {
+.language-selection h3 {
     text-align: center;
     color: #000;
     margin-bottom: 1rem;
@@ -196,6 +196,203 @@ input:focus {
     text-align: center;
     color: #4b5563;
     margin-bottom: 2rem;
+}
+
+.language-grid {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.language-item {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    background: #ffffff;
+    border: 2px solid #f1f5f9;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.language-item:hover {
+    border-color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+}
+
+.language-item:active {
+    transform: translateY(-1px);
+}
+
+.language-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 2;
+}
+
+.language-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.flag {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.language-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.language-count {
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.language-bar {
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.language-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+    border-radius: 4px;
+    transition: width 0.8s ease-out;
+    position: relative;
+}
+
+.language-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.other-language {
+    border: 2px dashed #e2e8f0 !important;
+    background: #f8fafc !important;
+}
+
+.other-language:hover {
+    border-color: #10b981 !important;
+    background: #f0fdf4 !important;
+}
+
+.other-language .language-count {
+    color: #10b981;
+}
+
+.other-bar {
+    background: linear-gradient(90deg, #10b981 0%, #34d399 100%) !important;
+}
+
+.language-request-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    border: 1px solid #e5e7eb;
+}
+
+.language-request-form h3 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.requested-languages {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    border: 1px solid #e5e7eb;
+}
+
+.requested-languages h3 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.requested-language-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.requested-language-item {
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.5rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.requested-language-item:hover {
+    background: #f1f5f9;
+    border-color: #8b5cf6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.requested-language-item .language-name {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 1rem;
+}
+
+.requested-language-item .language-count {
+    color: #8b5cf6;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.no-requests {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem;
+    font-style: italic;
+}
+
+.loading {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem;
+    font-style: italic;
+}
+
+.error {
+    text-align: center;
+    color: #dc2626;
+    padding: 2rem;
+    background: #fef2f2;
+    border-radius: 8px;
+    border: 1px solid #fecaca;
 }
 
 textarea {
