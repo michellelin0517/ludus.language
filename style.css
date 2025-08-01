@@ -34,6 +34,13 @@ header {
 .tagline {
     font-size: 1.2rem;
     color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+.launch-date {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
 }
 
 main {
