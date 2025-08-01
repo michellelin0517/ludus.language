@@ -129,12 +129,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const languageSection = document.getElementById('languageSection');
     const waitlistForm = document.querySelector('.waitlist-form');
     
-    // Language data with flag emojis and counts
+    // Language data with flag emojis and counts - top 15 most popular languages
     const languages = [
         { name: 'Spanish', flag: '🇪🇸', count: 234 },
         { name: 'French', flag: '🇫🇷', count: 189 },
         { name: 'Chinese', flag: '🇨🇳', count: 156 },
-        { name: 'Latin', flag: '🏛️', count: 142 }
+        { name: 'German', flag: '🇩🇪', count: 142 },
+        { name: 'Italian', flag: '🇮🇹', count: 128 },
+        { name: 'Portuguese', flag: '🇵🇹', count: 115 },
+        { name: 'Japanese', flag: '🇯🇵', count: 102 },
+        { name: 'Russian', flag: '🇷🇺', count: 89 },
+        { name: 'Korean', flag: '🇰🇷', count: 76 },
+        { name: 'Arabic', flag: '🇸🇦', count: 63 },
+        { name: 'Dutch', flag: '🇳🇱', count: 54 },
+        { name: 'Hindi', flag: '🇮🇳', count: 47 },
+        { name: 'Swedish', flag: '🇸🇪', count: 41 },
+        { name: 'Norwegian', flag: '🇳🇴', count: 36 },
+        { name: 'Polish', flag: '🇵🇱', count: 32 }
     ];
     
     // Function to fetch and display languages
